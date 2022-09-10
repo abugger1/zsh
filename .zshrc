@@ -11,7 +11,7 @@ stty stop undef		# Disable ctrl-s to freeze terminal.
 zle_highlight=('paste:none')
 
 # beeping is annoying
-unsetopt BEEP
+#unsetopt BEEP
 
 
 # completions
@@ -46,24 +46,24 @@ zsh_add_file "zsh-prompt"
 zsh_add_plugin "zsh-users/zsh-autosuggestions"
 zsh_add_plugin "zsh-users/zsh-syntax-highlighting"
 zsh_add_plugin "hlissner/zsh-autopair"
-# zsh_add_completion "esc/conda-zsh-completion" false
+zsh_add_completion "esc/conda-zsh-completion" False
 # For more plugins: https://github.com/unixorn/awesome-zsh-plugins
 # More completions https://github.com/zsh-users/zsh-completions
 
 # Key-bindings
 bindkey -s '^o' 'ranger^M'
 bindkey -s '^f' 'zi^M'
-bindkey -s '^s' 'ncdu^M'
- bindkey -s '^n' 'nvim $(fzf)^M'
- bindkey -s '^v' 'nvim\n'
+# bindkey -s '^s' 'ncdu^M'
+bindkey -s '^n' 'nvim $(fzf)^M'
+bindkey -s '^v' 'nvim\n'
 bindkey -s '^z' 'zi^M'
-bindkey '^[[P' delete-char
+# bindkey '^[[P' delete-char
 bindkey "^p" up-line-or-beginning-search # Up
 bindkey "^n" down-line-or-beginning-search # Down
 bindkey "^k" up-line-or-beginning-search # Up
 bindkey "^j" down-line-or-beginning-search # Down
-bindkey -r "^u"
-bindkey -r "^d"
+# bindkey -v "^u"
+# bindkey -r "^d"
 
 # FZF 
 # TODO update for mac
@@ -75,10 +75,11 @@ bindkey -r "^d"
 [ -f $ZDOTDIR/completion/_fnm ] && fpath+="$ZDOTDIR/completion/"
 # export FZF_DEFAULT_COMMAND='rg --hidden -l ""'
 compinit
+_comp_options+=(globdots)
 
 # Edit line in vim with ctrl-e:
 autoload edit-command-line; zle -N edit-command-line
- bindkey '^e' edit-command-line
+bindkey '^e' edit-command-line
 
 # Environment variables set everywhere
 export EDITOR="nvim"

@@ -1,4 +1,4 @@
-#files: 962	version: 5.9
+#files: 964	version: 5.9
 
 _comps=(
 '-' '_precommand'
@@ -212,6 +212,7 @@ _comps=(
 'conan' '_conan'
 'conch' '_twisted'
 'concourse' '_concourse'
+'conda' '_conda'
 '-condition-' '_condition'
 'config.status' '_configure'
 'configure' '_configure'
@@ -797,6 +798,7 @@ _comps=(
 'make' '_make'
 'makeinfo' '_texinfo'
 'makepkg' '_pacman'
+'mamba' '_conda'
 'man' '_man'
 'manage.py' '_django'
 'manila' '_openstack'
@@ -2017,7 +2019,8 @@ autoload -Uz _afew _android _archlinux-java _artisan _atach \
             _wait _which _widgets _zargs _zattr \
             _zcalc _zcalc_line _zcompile _zed _zftp \
             _zle _zmodload _zmv _zparseopts _zpty \
-            _zsh-mime-handler _zsocket _zstyle _ztodo _fnm
+            _zsh-mime-handler _zsocket _zstyle _ztodo _conda \
+            _conda _fnm
 autoload -Uz +X _call_program
 
 typeset -gUa _comp_assocs
